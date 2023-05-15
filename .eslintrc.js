@@ -21,12 +21,14 @@ module.exports = {
   plugins: ["react"],
   rules: {
     // Possible errors
-    "no-console": "warn",
+    "no-console": ["error", { allow: ["warn", "error"] }],
     // Best practices
     "dot-notation": "error",
     "no-else-return": "error",
     "no-floating-decimal": "error",
     "no-sequences": "error",
+    "no-unused-vars": ["warn", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
+
     // Stylistic
     "array-bracket-spacing": "error",
     "computed-property-spacing": ["error", "never"],
@@ -39,13 +41,6 @@ module.exports = {
     "prefer-const": "error",
     // Imports
     "import/prefer-default-export": "off",
-    "sort-imports": [
-      "error",
-      {
-        ignoreCase: true,
-        ignoreDeclarationSort: true,
-      },
-    ],
     "no-unused-expressions": "off",
     "no-prototype-builtins": "off",
     // REACT
@@ -59,13 +54,7 @@ module.exports = {
       {
         checkAliases: true,
       },
-    ],
-    "react/jsx-sort-props": [
-      "error",
-      {
-        ignoreCase: true,
-      },
-    ],
+    ], 
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": 0,
     // Prettier
